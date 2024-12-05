@@ -6,20 +6,31 @@ body {
   height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: lightgrey; 
 }
 
 .container {
   width: 80%;
-  margin: 50px auto; 
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.5); 
-  border: 2px solid #333; 
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.7); 
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1, p, ul {
-  color: #333; 
+  color: #333;
+}
+
+h1 {
+  color: rgb(10, 56, 207);
+  text-align: center;
+}
+
+h2 {
+  color: rgb(160, 5, 5);
+  text-align: center;
 }
 
 ul {
@@ -34,66 +45,79 @@ ul li {
 
 .precio {
   font-weight: bold;
-  color: #800000; 
+  color: #800000;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 section img {
-  margin-top: 20px;
-  margin-right: 10px;
-  margin-left: 10px;
-  border-radius: 5px; 
-}
-
-h1{
-    color: rgb(10, 56, 207);
-}
-h2{
-   color: rgb(160, 5, 5);
-}
-ul {
-  list-style-type: none; 
-  padding: 0;
-}
-li {
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  margin-bottom: 10px; 
-}
-.precio {
-  font-weight: bold;
-  color: rgb(13, 14, 13);
-}
-ul{
-  color: rgb(6, 114, 12);
-  font-weight: bold; 
-}
-body{
-  background-color: lightgrey;
-}
-section{
-  display: flex;
-  width: 600px;
-  height: 430px;
-}
-section img{
-  width: 0px;
-  flex-grow: 1;
+  width: 270px; 
+  border-radius: 5px;
   object-fit: cover;
   opacity: .8;
   transition: .5s ease;
 }
-section img:hover{
-  width: 300px;
+
+section img:hover {
+  width: 300px; 
   opacity: 1;
   filter: contrast(150%);
 }
-p{
+
+p {
   color: rgb(255, 255, 255);
-  font-size: 25px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
-aside{
+
+aside {
   color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+  margin: 20px 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
   font-weight: bold;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  background-color: #1e212d;
+  color: #fff;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+iframe {
+  width: 100%;
+  height: 500px; 
+  border: none;
+  margin-top: 1rem;
+  border-radius: 8px;
+  transition: height 0.5s ease; 
+}
+
+iframe:hover {
+  height: 600px; 
+}
 
