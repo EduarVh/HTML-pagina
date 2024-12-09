@@ -1,125 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingreso Cliente</title>
+    <title>Resumen: Motos y Carros Deportivos Del Bellfegor</title>
     <style>
         body {
-            background-image: url('imapagina.jpg');
-            background-size: cover; 
-            background-position: center;
-            background-repeat: no-repeat; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-image: url("pantaimg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        form {
-            background-color: rgba(236, 247, 250, 0.9); /* Fondo transparente */
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 15px;
-            width: 90%; /* Ancho ajustado */
-            max-width: 400px; /* Límite máximo para pantallas grandes */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        p {
-            font-style: italic;
-            color: rgba(0, 0, 0, 0.7);
-            margin-bottom: 15px;
-        }
-        h1 {
+        header {
+            background-color: rgb(23, 150, 12);
+            color: #fff;
             text-align: center;
-            color: #333;
-            font-size: 1.5rem;
+            padding: 2rem 0;
         }
-        label {
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+        }
+        nav {
+            background-color: #444;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
             font-weight: bold;
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 5px;
         }
-        input, select, button {
-            padding: 8px;
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #1e212d;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section li {
+            padding: 0.5rem 0;
+        }
+        .section .precio {
+            color: #0077b6;
+            font-weight: bold;
+        }
+        .images-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .images-container img {
+            border-radius: 8px;
+            max-width: 100%;
+            width: calc(33.333% - 10px);
+        }
+        iframe {
             width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            box-sizing: border-box;
+            border: none;
+            margin-top: 1rem;
+            border-radius: 8px;
         }
-        .radio-group {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
+        aside {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .radio-group label {
-            font-weight: normal;
+        aside h3 {
+            margin-top: 0;
+            color: #00ff7f;
         }
-        .buttons {
-            display: flex;
-            justify-content: space-between;
+        aside ul {
+            list-style: square;
+            margin: 0;
+            padding-left: 1.5rem;
         }
-        .buttons input {
-            width: 48%;
+        aside ul li {
+            margin: 0.5rem 0;
+        }
+        footer {
+            text-align: center;
+            background-color: #1e212d;
+            color: #fff;
+            padding: 1rem 0;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
-    <form method="get" action="actividad.html">
-        <h1>Formulario Cliente</h1>
-        <p>
-            <label for="documento">Documento:</label>
-            <input type="text" id="documento" name="documento" required>
-        </p>
-        <p>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre">
-        </p>
-        <p>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="Ingrese su correo">
-        </p>
-        <p>
-            <label for="telefono">Teléfono:</label>
-            <input type="number" id="telefono" name="telefono" placeholder="Ingrese su teléfono">
-        </p>
-        <p>
-            <label for="fecha">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha" name="fecha" required>
-        </p>
-        <p>
-            <label>Género:</label>
-            <div class="radio-group">
-                <label><input type="radio" name="genero" value="masculino"> Masculino</label>
-                <label><input type="radio" name="genero" value="femenino"> Femenino</label>
-                <label><input type="radio" name="genero" value="otro"> Otro</label>
-            </div>
-        </p>
-        <p>
-            <label for="preferencia">Preferencia:</label>
-            <select id="preferencia" name="preferencia" required>
-                <option value="">Seleccione una opción</option>
-                <option value="motos">Motos</option>
-                <option value="autos">Autos</option>
-                <option value="ambos">Ambos</option>
-            </select>
-        </p>
-        <p>
-            <label for="color">Color favorito:</label>
-            <input type="color" id="color" name="color">
-        </p>
-        <p>
-            <label for="archivo">Subir documento:</label>
-            <input type="file" id="archivo" name="archivo">
-        </p>
-        <div class="buttons">
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Cancelar">
+
+<header>
+    <h1>Motos y Carros Deportivos Del Bellfegor</h1>
+    <p>Explora lo mejor en velocidad y diseño automotriz</p>
+</header>
+
+<nav>
+    <a href="#motos">Motos</a>
+    <a href="#autos">Autos</a>
+    <a href="#videos">Videos</a>
+</nav>
+
+<main>
+    <section id="motos" class="section">
+        <h2>Motos Deportivas Destacadas</h2>
+        <p>Descubre las mejores motos deportivas disponibles en el mercado:</p>
+        <ul>
+            <li><strong>Kawasaki H2R</strong> - Información: <span class="información">Una de las motos más rápidas del mundo, diseñada para velocidad extrema y alto rendimiento. Precio: 190.000.000 COP</span></li>
+            <li><strong>Suzuki Gixxer</strong> - Información: <span class="información">Una moto económica y confiable, ideal para ciudad y carreteras. Precio: 20.000.000 COP</span></li>
+            <li><strong>Ducati V4</strong> - Información: <span class="información">Una moto italiana de lujo con tecnología avanzada y diseño sofisticado. Precio: 150.000.000 COP</span></li>
+        </ul>
+        <div class="images-container">
+            <img src="Kawasaki Ninja H2R en Kioto al atardecer _ Imagen Premium generada con IA.jpg" alt="Kawasaki H2R">
+            <img src="moto.jpg" alt="Suzuki Gixxer">
+            <img src="descargar.jpg" alt="Ducati V4">
         </div>
-    </form>
+    </section>
+
+    <section id="autos" class="section">
+        <h2>Carros Deportivos Exclusivos</h2>
+        <p>Conduce a otro nivel con estos carros de lujo:</p>
+        <ul>
+            <li><strong>BMW Serie M</strong> - Información: <span class="información">Un automóvil deportivo alemán, conocido por su balance entre lujo y potencia. Precio: 390.000.000 COP</span></li>
+            <li><strong>Twingo</strong> - Información: <span class="información">Un auto urbano accesible y económico, ideal para la ciudad. Precio: 90.000.000 COP</span></li>
+            <li><strong>Ferrari F8</strong> - Información: <span class="información">Un superdeportivo italiano con diseño aerodinámico y alto rendimiento. Precio: 690.000.000 COP</span></li>
+            <li><strong>Mercedes AMG</strong> - Información: <span class="información">Un carro deportivo de lujo con diseño elegante y prestaciones impresionantes. Precio: 450.000.000 COP</span></li>
+        </ul>
+        <div class="images-container">
+            <img src="descargar (3).jpg" alt="BMW Serie M">
+            <img src="Elegant Black!.jpg" alt="Twingo">
+            <img src="Yellow Ferrari F8 On Slate Brick Road  3D Sublimation 20oz Skinny Straight Tumblr Wrap  300 DPI PNG Commercial Use  Supercar Enthusiast Gift.jpg" alt="Ferrari F8">
+            <img src="descargar (2).jpg" alt="Mercedes AMG">
+        </div>
+    </section>
+
+    <section id="videos" class="section">
+        <h2>Videos Destacados</h2>
+        <p>¡Mira en acción algunos de estos increíbles vehículos deportivos!</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hQYRDNl-lGI?si=6I_-fVQHAkfztYR2" title="YouTube video player"></iframe>
+        <p><a href="https://youtu.be/YQ-UuNPpK9A?si=DrEfx4lEoMb7L5Ou" target="_blank">Ver más videos aquí</a></p>
+    </section>
+
+    <aside>
+        <h3>Consejos para Elegir tu Vehículo Deportivo</h3>
+        <ul>
+            <li>Define tu presupuesto antes de buscar opciones.</li>
+            <li>Considera el uso principal: ¿ciudad, carretera o pista?</li>
+            <li>Investiga el consumo de combustible y mantenimiento.</li>
+            <li>Revisa la disponibilidad de repuestos en tu área.</li>
+            <li>Realiza una prueba de manejo siempre que sea posible.</li>
+        </ul>
+    </aside>
+</main>
+
+<footer>
+    <p>&copy; 2024 Bellfegor. Todos los derechos reservados.</p>
+</footer>
+
 </body>
 </html>
+
 
