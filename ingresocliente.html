@@ -18,34 +18,108 @@
             font-family: Arial, sans-serif;
         }
         form {
-            background-color: rgba(236, 247, 250, 0.9); /* Añade transparencia al fondo del formulario */
-            border: 1px solid;
-            border-radius: 20px;
-            padding: 20px;
-            width: 50%;
+            background-color: rgba(236, 247, 250, 0.9); /* Fondo transparente */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            width: 90%; /* Ancho ajustado */
+            max-width: 400px; /* Límite máximo para pantallas grandes */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         p {
             font-style: italic;
-            color: rgba(0, 0, 0, 0.582);
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 15px;
         }
         h1 {
             text-align: center;
             color: #333;
+            font-size: 1.5rem;
+        }
+        label {
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, button {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            box-sizing: border-box;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .radio-group label {
+            font-weight: normal;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons input {
+            width: 48%;
         }
     </style>
 </head>
 <body>
     <form method="get" action="actividad.html">
-        <h1>Formulario ingreso cliente</h1>
-        <p>Documento: <input type="text" size="28" required></p>
-        <p>Nombre: <input type="text" size="40" name="Nombre" required placeholder="Ingrese su nombre"></p>
-        <p>Email: <input type="email" name="email" placeholder="Ingrese su correo" required></p>
-        <p>Teléfono: <input type="number" name="telefono" placeholder="Ingrese su teléfono"></p>
+        <h1>Formulario Cliente</h1>
         <p>
+            <label for="documento">Documento:</label>
+            <input type="text" id="documento" name="documento" required>
+        </p>
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre">
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Ingrese su correo">
+        </p>
+        <p>
+            <label for="telefono">Teléfono:</label>
+            <input type="number" id="telefono" name="telefono" placeholder="Ingrese su teléfono">
+        </p>
+        <p>
+            <label for="fecha">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha" name="fecha" required>
+        </p>
+        <p>
+            <label>Género:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+                <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+                <label><input type="radio" name="genero" value="otro"> Otro</label>
+            </div>
+        </p>
+        <p>
+            <label for="preferencia">Preferencia:</label>
+            <select id="preferencia" name="preferencia" required>
+                <option value="">Seleccione una opción</option>
+                <option value="motos">Motos</option>
+                <option value="autos">Autos</option>
+                <option value="ambos">Ambos</option>
+            </select>
+        </p>
+        <p>
+            <label for="color">Color favorito:</label>
+            <input type="color" id="color" name="color">
+        </p>
+        <p>
+            <label for="archivo">Subir documento:</label>
+            <input type="file" id="archivo" name="archivo">
+        </p>
+        <div class="buttons">
             <input type="submit" value="Enviar">
             <input type="reset" value="Cancelar">
-        </p>
+        </div>
     </form>
 </body>
 </html>
+
